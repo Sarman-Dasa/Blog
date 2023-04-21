@@ -10,7 +10,8 @@
     <p>Get All Detail :{{ getDeta() }}</p>
     <!-- print a only first name into data -->
     <p>Name : {{ getDeta().firstName }}</p>
-    <button v-on:click="test()">Click!!!</button>
+    <p>Total Click : {{ count }}</p>
+    <button v-on:click="countClicks()">Click!!!</button>
     <button v-on:dblclick="getMobilenumber()" >Double Click</button>
 
 </template>
@@ -20,10 +21,11 @@ export default {
     name: 'HomeView',
     data() {
         return {
-            firstName: 'rahul',
-            lastName: 'sharma',
-            email: 'rahul12@gmail.com',
+            firstName: 'sarman',
+            lastName: 'Dasa',
+            email: 'dasa12@gmail.com',
             mobile: '9078564534',
+            count: 0,
         }
     },
     methods: {
@@ -39,8 +41,8 @@ export default {
                 mobile: '9078564533',
             }
         },
-        test() {
-            alert("Button click")
+        countClicks() {
+            this.count += 1;
         },
         getMobilenumber() {
             alert(this.mobile)
