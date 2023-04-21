@@ -20,10 +20,16 @@
     <input type="number" v-model="count">
     <input type="text" v-model="name">
     <p>Your name is : {{ name }}</p>
+    <UserForm />
+</div>
+<div id="clearboth">
+
 </div>
 </template>
 
 <script>
+import UserForm from './UserForm.vue';
+
 export default {
     name: 'HomeView',
     data() {
@@ -58,6 +64,9 @@ export default {
         getConsole() {
             console.log('mousemove event called')
         }
+    },
+    components: {
+        UserForm,
     }
 }
 </script>
@@ -75,14 +84,21 @@ p {
 {
     float: left;
     width: 45%;
+    background-color: antiquewhite;
+    padding: 10px;
 }
 #rigth
 {
     float: right;
-    width: 45%;
+    width: 50%;
     text-align: left;
+    background-color: aqua;
+    padding: 10px;
 }
 #rigth h2 {
     color: brown;
+}
+#clearboth {
+    clear: both;
 }
 </style>
