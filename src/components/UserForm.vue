@@ -1,5 +1,4 @@
 <template>
-    <h2>
         <table id="usertable">
             <h3>User Data</h3>
             
@@ -56,7 +55,6 @@
 
             <p>{{ output }}</p>
         </table>
-    </h2>
 </template>
 
 <script>
