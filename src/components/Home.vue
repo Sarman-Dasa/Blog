@@ -23,12 +23,15 @@
     <UserForm />
 </div>
 <div id="clearboth">
-
+<div style="display:flex">
+    <ListData />
+</div>
 </div>
 </template>
 
 <script>
 import UserForm from './UserForm.vue';
+import ListData from './ListData.vue'
 
 export default {
     name: 'HomeView',
@@ -67,6 +70,7 @@ export default {
     },
     components: {
         UserForm,
+        ListData,
     }
 }
 </script>
@@ -95,8 +99,8 @@ p {
     background-color: aqua;
     padding: 10px;
 }
-#rigth h2 {
-    color: brown;
+h2 {
+    color: #000;
 }
 #clearboth {
     clear: both;
