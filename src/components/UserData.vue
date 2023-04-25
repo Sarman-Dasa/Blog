@@ -12,13 +12,13 @@
     </div>
     <div class="row">
         <div class="col text-center">
-            <h3>User Data</h3>
+            <h3 class="bg-primary p-3">User Data</h3>
         </div>
     </div>
 
     <div class="row">
         <div class="col">
-            <input type="text" class="form-control" placeholder="user Name" id="userName" v-model="form.username">
+            <input type="text" class="form-control" placeholder="user Name" id="userName" v-model.trim="form.username">
         </div>
         <div class="col">
             <input type="email" class="form-control" placeholder="Email" v-model="form.email">
