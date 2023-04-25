@@ -7,12 +7,18 @@
         <button v-on:click="getUserId(user.id)">Get ID</button>
     </li>
    </ul>
-   <button v-on:click="myFunction">Get Data</button>
+   <!-- send child to parent data component -->
+   <button v-on:click="myFunction(userName)">send User Name</button>
 </template>
 
 <script>
     export default {
         name: 'ChildView',
+        data() {
+            return {
+                userName: "sarmand",
+            }
+        },
         props: {
             email: String,
             users:Object,
