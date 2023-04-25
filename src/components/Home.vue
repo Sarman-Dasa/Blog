@@ -31,6 +31,7 @@
         <!-- set data and get into child component -->
         <!-- Access parent component data into child component like:property , object ,function -->
         <Child email="sarmand@zignuts.com" :users="users" :myFunction="myFunction" />
+        <h3>User Name Is : {{ userName }}</h3>
     </div>
 
     <div id="right">
@@ -90,6 +91,7 @@ export default {
             ],
             message: "<h1>user List</h1>",
             tableDesign: false,
+            userName: null,
         };
     },
     methods: {
@@ -114,8 +116,9 @@ export default {
         getConsole() {
             console.log("mousemove event called");
         },
-        myFunction() {
-            alert("call from child component");
+        // get child to parent data component
+        myFunction(name) {
+            this.userName = name;
         },
         // call this function from userlist component and alert a user id
         getUserId(id) {
