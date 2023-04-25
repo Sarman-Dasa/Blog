@@ -4,6 +4,7 @@
    <ul>
     <li v-for="user in users" :key="user.id">
         {{ user.name }} || {{ user.email }} || {{ user.phone }} || {{ user.gender }}
+        <button v-on:click="getUserId(user.id)">Get ID</button>
     </li>
    </ul>
    <button v-on:click="myFunction">Get Data</button>
@@ -16,6 +17,12 @@
             email: String,
             users:Object,
             myFunction: Function,
+        },
+        methods:{
+            getUserId(id) {
+                alert(id);
+            }
         }
+        
     }
 </script>
