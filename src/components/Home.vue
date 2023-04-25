@@ -59,6 +59,10 @@
     <div id="right">
         <UserData />
     </div>
+    <div id="clearboth"></div>
+    <div id="left">
+        <Watcher />
+    </div>
 </template>
 
 <script>
@@ -67,6 +71,7 @@ import ListData from "./ListData.vue";
 import Child from "./Child.vue";
 import UserList from "./UserList.vue";
 import UserData from "./UserData.vue";
+import Watcher from "./Watcher.vue";
 
 export default {
     name: "HomeView",
@@ -135,14 +140,15 @@ export default {
     ListData,
     Child,
     UserList,
-    UserData
+    UserData,
+    Watcher
 },
-    computed:{
+    computed: {
         applyStyle() {
-           return {
+            return {
                 tabledesign: this.tableDesign,
                 error: true
-           }
+            }
         }
     }
 };
@@ -196,6 +202,7 @@ h2 {
     color: #fff;
     padding: 10px
 }
+
 .error {
     color: red;
 }
