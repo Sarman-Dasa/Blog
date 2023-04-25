@@ -34,8 +34,8 @@
     </div>
 
     <div id="right">
-        <button v-on:click="tableDesign = !tableDesign">Chnage table Style</button>
-        <table :class="{ tabledesign: tableDesign }">
+        <button v-on:click="tableDesign = !tableDesign">change table Style</button>
+        <table :class="applyStyle">
             <tr>
                 <th>Name</th>
                 <th>Email</th>
@@ -128,6 +128,14 @@ export default {
         Child,
         UserList
     },
+    computed:{
+        applyStyle() {
+           return {
+                tabledesign: this.tableDesign,
+                error: true
+           }
+        }
+    }
 };
 </script>
 
@@ -178,5 +186,8 @@ h2 {
     background-color: black;
     color: #fff;
     padding: 10px
+}
+.error {
+    color: red;
 }
 </style>
