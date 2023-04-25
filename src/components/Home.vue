@@ -15,19 +15,46 @@
         <button v-on:click="countClicks()">Click!!!</button>
         <button v-on:dblclick="getMobilenumber()">Double Click</button>
     </div>
-    <div id="rigth">
+
+    <div id="right">
         <h2>Second Div</h2>
         <input type="number" v-model="count" />
         <input type="text" v-model="name" />
         <p>Your name is : {{ name }}</p>
         <UserForm />
     </div>
+
     <div id="clearboth"></div>
-    <div>
+
+    <div id="left">
         <ListData />
         <!-- set data and get into child component -->
         <!-- Access parent component data into child component like:property , object ,function -->
-        <Child email="sarmand@zignuts.com" :users="users" :myFunction="myFunction"/>
+        <Child email="sarmand@zignuts.com" :users="users" :myFunction="myFunction" />
+    </div>
+
+    <div id="right">
+        <!-- <li v-for="user in users" :key="user.id">
+            <UserList :user="user"/>
+        </li> -->
+        <table border="1" align="center">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>gender</th>
+                <th>Action</th>
+            </tr>
+            <tr v-for="user in users" :key="user.id">
+                <UserList :user="user" :userId="getUserId"/>
+            </tr>
+            <tr>
+                <!-- Html Tag binding  -->
+                <td colspan="5">
+                    <div v-html="message"></div>
+                </td>
+            </tr>
+        </table>
     </div>
 </template>
 
@@ -35,6 +62,7 @@
 import UserForm from "./UserForm.vue";
 import ListData from "./ListData.vue";
 import Child from "./Child.vue";
+import UserList from "./UserList.vue";
 
 export default {
     name: "HomeView",
@@ -48,20 +76,21 @@ export default {
             name: "",
             users: [
                 {
-                    id:1,
+                    id: 1,
                     name: "sarman",
                     email: "sarmand@zignuts.com",
                     phone: "9767453445",
                     gender: "Male",
                 },
                 {
-                    id:2,
+                    id: 2,
                     name: "dharmik",
                     email: "dharmikd@zignuts.com",
                     phone: "9767453444",
                     gender: "Male",
                 },
-            ]
+            ],
+            message: "<h1>user List</h1>",
         };
     },
     methods: {
@@ -88,12 +117,17 @@ export default {
         },
         myFunction() {
             alert("call from child component");
+        },
+        // call this function from userlist component and alert a user id
+        getUserId(id) {
+            alert(id);
         }
     },
     components: {
         UserForm,
         ListData,
         Child,
+        UserList
     },
 };
 </script>
@@ -113,14 +147,16 @@ p {
     width: 45%;
     background-color: antiquewhite;
     padding: 10px;
+    margin-bottom: 10px;
 }
 
-#rigth {
+#right {
     float: right;
     width: 50%;
     text-align: left;
     background-color: aqua;
     padding: 10px;
+    margin-bottom: 10px;
 }
 
 h2 {
