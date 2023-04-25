@@ -55,6 +55,10 @@
             </tr>
         </table>
     </div>
+    
+    <div id="right">
+        <UserData />
+    </div>
 </template>
 
 <script>
@@ -62,6 +66,7 @@ import UserForm from "./UserForm.vue";
 import ListData from "./ListData.vue";
 import Child from "./Child.vue";
 import UserList from "./UserList.vue";
+import UserData from "./UserData.vue";
 
 export default {
     name: "HomeView",
@@ -126,11 +131,12 @@ export default {
         }
     },
     components: {
-        UserForm,
-        ListData,
-        Child,
-        UserList
-    },
+    UserForm,
+    ListData,
+    Child,
+    UserList,
+    UserData
+},
     computed:{
         applyStyle() {
            return {
