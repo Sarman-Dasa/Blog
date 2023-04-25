@@ -34,10 +34,8 @@
     </div>
 
     <div id="right">
-        <!-- <li v-for="user in users" :key="user.id">
-            <UserList :user="user"/>
-        </li> -->
-        <table border="1" align="center">
+        <button v-on:click="tableDesign = !tableDesign">Chnage table Style</button>
+        <table :class="{ tabledesign: tableDesign }">
             <tr>
                 <th>Name</th>
                 <th>Email</th>
@@ -46,7 +44,7 @@
                 <th>Action</th>
             </tr>
             <tr v-for="user in users" :key="user.id">
-                <UserList :user="user" :userId="getUserId"/>
+                <UserList :user="user" :userId="getUserId" />
             </tr>
             <tr>
                 <!-- Html Tag binding  -->
@@ -91,6 +89,7 @@ export default {
                 },
             ],
             message: "<h1>user List</h1>",
+            tableDesign: false,
         };
     },
     methods: {
@@ -165,5 +164,19 @@ h2 {
 
 #clearboth {
     clear: both;
+}
+
+.tabledesign {
+    background-color: aquamarine;
+    font-size: 18px;
+    font-family: monospace;
+    border-collapse: collapse;
+    /* border: 3px solid black; */
+}
+
+.tabledesign th {
+    background-color: black;
+    color: #fff;
+    padding: 10px
 }
 </style>
