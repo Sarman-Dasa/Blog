@@ -1,8 +1,5 @@
 <template>
     <h1>{{ profile }}' Profile page</h1>
-    <AlertBox>
-        Something bad happened.
-    </AlertBox>
 </template>
 
 <script>
