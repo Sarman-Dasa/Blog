@@ -6,6 +6,7 @@ import VueJs from "./components/VueJs.vue"
 import UserData from "./components/UserData.vue";
 import Watcher from "./components/Watcher.vue";
 import Profile from "./components/Profile.vue";
+import PageNotFound from "./components/PageNotFound.vue";
 
 const routes = [
     {
@@ -47,6 +48,11 @@ const routes = [
         name: "Profile",
         path: "/profile/:id",
         component: Profile
+    },
+    {
+        name: "NotFound",
+        path: "/:pathMatch(.*)*",
+        component: PageNotFound
     }
 
     
