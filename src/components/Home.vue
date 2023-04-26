@@ -1,4 +1,17 @@
 <template>
+<div class="nav">
+    <button @click="tab='php'">Php</button>
+    <button @click="tab='LaravelView'">Laravel</button>
+    <button @click="tab='VueJs'">Vue Js</button>
+    <button @click="tab='UserForm'">User Form</button>
+    <button @click="tab='UserData'">User Form Validation</button>
+    <button @click="tab='Watcher'">Watcher</button>
+</div>
+<div class="main"> 
+    <component :is="tab"/>
+</div>
+
+
     <div class="left">
         <h1 v-on:mousemove="getConsole()">Home component</h1>
         <p>Employee FirstName : {{ firstName }}</p>
@@ -21,12 +34,9 @@
         <input type="number" v-model="count" />
         <input type="text" v-model="name" />
         <p>Your name is : {{ name }}</p>
-        <UserForm />
     </div>
 
-    <div class="clearboth"></div>
-
-    <div class="left">
+    <div class="right">
         <ListData />
         <!-- set data and get into child component -->
         <!-- Access parent component data into child component like:property , object ,function -->
@@ -35,7 +45,7 @@
     </div>
 
     <!-- component reuse example -->
-    <div class="right">
+    <div class="left">
         <button v-on:click="tableDesign = !tableDesign">change table Style</button>
         <table :class="applyStyle">
             <tr>
@@ -55,38 +65,6 @@
                 </td>
             </tr>
         </table>
-    </div>
-
-    <!-- User form with validation -->
-    <div class="right">
-        <UserData />
-    </div>
-
-    <div class="clearboth"></div>
-
-    <!-- Watcher Example -->
-    <div class="left">
-        <Watcher />
-    </div>
-
-    <!--Normal Slot Example -->
-    <div class="right">
-        <SlotExample>
-            <h1>Hello from slot</h1>
-        </SlotExample>
-
-        <SlotExample>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur,
-                porro!
-            </p>
-        </SlotExample>
-
-        <SlotExample>
-            <a href="#">Click</a>
-        </SlotExample>
-
-        <SlotExample></SlotExample>
     </div>
 
     <div class="clearboth"></div>
@@ -116,6 +94,26 @@
         </template>
        </SlotExample>
     </div>
+
+    <div class="right">
+        <SlotExample>
+            <h1>Hello from slot</h1>
+        </SlotExample>
+
+        <SlotExample>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur,
+                porro!
+            </p>
+        </SlotExample>
+
+        <SlotExample>
+            <a href="#">Click</a>
+        </SlotExample>
+
+        <SlotExample></SlotExample>
+    </div>
+
 </template>
 
 <script>
@@ -126,6 +124,9 @@ import UserList from "./UserList.vue";
 import UserData from "./UserData.vue";
 import Watcher from "./Watcher.vue";
 import SlotExample from "./SlotExample.vue";
+import Php from "./Php.vue";
+import LaravelView from "./Laravel.vue";
+import VueJs from "./VueJs.vue";
 
 export default {
     name: "HomeView",
@@ -156,6 +157,7 @@ export default {
             message: "<h1>user List</h1>",
             tableDesign: false,
             userName: null,
+            tab: "Php",
         };
     },
     methods: {
@@ -190,14 +192,17 @@ export default {
         },
     },
     components: {
-        UserForm,
-        ListData,
-        Child,
-        UserList,
-        UserData,
-        Watcher,
-        SlotExample,
-    },
+    UserForm,
+    ListData,
+    Child,
+    UserList,
+    UserData,
+    Watcher,
+    SlotExample,
+    Php,
+    LaravelView,
+    VueJs
+},
     computed: {
         applyStyle() {
             return {
@@ -260,5 +265,24 @@ h2 {
 
 .error {
     color: red;
+}
+.nav
+{
+    padding: 10px;
+    background-color:aquamarine;
+}
+.nav button {
+    background-color: aliceblue;
+    padding: 5px 10px;
+    margin: 0px 10px;
+    font-size: large;
+}
+.main {
+    background-color:azure;
+    padding: 20px;
+    position: relative;
+    width: 50%;
+    margin: 2% 15%;
+    border: #000 5px solid;
 }
 </style>
