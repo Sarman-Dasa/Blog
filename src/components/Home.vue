@@ -69,7 +69,7 @@
         <Watcher />
     </div>
 
-    <!-- Slot Example -->
+    <!--Normal Slot Example -->
     <div class="right">
         <SlotExample>
             <h1>Hello from slot</h1>
@@ -87,6 +87,34 @@
         </SlotExample>
 
         <SlotExample></SlotExample>
+    </div>
+
+    <div class="clearboth"></div>
+
+    <div class="left">
+       <SlotExample>
+        <template v-slot:header>
+            <h3>Multiple Solt with name</h3>
+        </template>
+        <template v-slot:main>
+           <p>A vue js slot</p>
+        </template>
+        <template v-slot:footer>
+           <button>Click</button>
+        </template>
+       </SlotExample>
+
+       <SlotExample>
+        <template v-slot:header>
+            <h3>Slot Example</h3>
+        </template>
+        <template v-slot:main>
+           <p>A vue js Product</p>
+        </template>
+        <template v-slot:footer>
+           <button>Click</button>
+        </template>
+       </SlotExample>
     </div>
 </template>
 
