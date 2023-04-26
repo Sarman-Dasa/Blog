@@ -11,6 +11,7 @@
     <router-link to="/watcher">Volume</router-link>
     <router-link to="/profile/1">Dharmik' Profile</router-link>
     <router-link to="/profile/2">Hitesh' Profile</router-link>
+    <router-link to="/xyz/abc">xyz</router-link>
   </div>
 
   <div class="main">
