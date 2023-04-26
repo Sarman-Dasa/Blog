@@ -114,6 +114,11 @@
         <SlotExample></SlotExample>
     </div>
 
+    <div class="clearboth"></div>
+    <teleport to="#footer">
+        <Footer />
+    </teleport>
+
 </template>
 
 <script>
@@ -127,6 +132,7 @@ import SlotExample from "./SlotExample.vue";
 import Php from "./Php.vue";
 import LaravelView from "./Laravel.vue";
 import VueJs from "./VueJs.vue";
+import Footer from "./Footer.vue";
 
 export default {
     name: "HomeView",
@@ -201,7 +207,8 @@ export default {
     SlotExample,
     Php,
     LaravelView,
-    VueJs
+    VueJs,
+    Footer,
 },
     computed: {
         applyStyle() {
@@ -211,6 +218,20 @@ export default {
             };
         },
     },
+
+    // life cycle method
+    beforeCreate() {
+        console.log("before create name = " + this.firstName);
+    },
+    created() {
+        console.log("after create name = " + this.firstName);
+    },
+    beforeMount() {
+        console.log("before mount :"+ this.$el);
+    },
+    mounted() {
+        console.log("after mount :"+ this.$el);
+    }
 };
 </script>
 
