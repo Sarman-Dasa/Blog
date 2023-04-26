@@ -34,6 +34,8 @@
         <input type="number" v-model="count" />
         <input type="text" v-model="name" />
         <p>Your name is : {{ name }}</p>
+        <button v-on:click="show=!show">Volume</button>
+        <Watcher v-if="show"/>
     </div>
 
     <div class="right">
@@ -133,6 +135,7 @@ import Php from "./Php.vue";
 import LaravelView from "./Laravel.vue";
 import VueJs from "./VueJs.vue";
 import Footer from "./Footer.vue";
+import { watch } from "vue";
 
 export default {
     name: "HomeView",
@@ -164,6 +167,7 @@ export default {
             tableDesign: false,
             userName: null,
             tab: "Php",
+            show: true
         };
     },
     methods: {
@@ -209,6 +213,7 @@ export default {
     LaravelView,
     VueJs,
     Footer,
+    watch
 },
     computed: {
         applyStyle() {
