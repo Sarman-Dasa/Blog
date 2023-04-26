@@ -5,33 +5,39 @@
 </template>
 
 <script>
-    export default {
-        name:"watchersView",
-        data() {
-            return {
-                volume: 0,
-            }
-        },
-        watch: {
-            volume(newValue, oldValue) {
-                //console.log("New Value:" + newValue + " oldValue: "+oldValue);
-                if(newValue > oldValue && newValue==15) {
-                    alert("Volume is high to damage your ears!!!");
-                }
-            }
-        },
-        // life cycle method
-        beforeUpdate() {
-            console.log("before update volume :",this.$refs['volume'].textContent);
-        },
-        updated() {
-            console.log("after update volume :",this.$refs['volume'].textContent);
+export default {
+    name: "watchersView",
+    data() {
+        return {
+            volume: 0,
         }
-    }
+    },
+    watch: {
+        volume(newValue, oldValue) {
+            //console.log("New Value:" + newValue + " oldValue: "+oldValue);
+            if (newValue > oldValue && newValue == 15) {
+                alert("Volume is high to damage your ears!!!");
+            }
+        }
+    },
+    // life cycle method
+    beforeUpdate() {
+        console.log("before update volume :", this.$refs['volume'].textContent);
+    },
+    updated() {
+        console.log("after update volume :", this.$refs['volume'].textContent);
+    },
+    beforeUnmount() {
+        console.log("before unmount", this.$refs['volume'].textContent);
+    },
+    unmounted() {
+        console.log("after mounted", this.$el);
+    },
+}
 </script>
 
 <style scoped>
-*{
+* {
     text-align: center;
 }
 </style>
