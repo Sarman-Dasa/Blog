@@ -117,9 +117,7 @@
     </div>
 
     <div class="clearboth"></div>
-    <teleport to="#footer">
-        <Footer />
-    </teleport>
+
 
 </template>
 
@@ -134,8 +132,6 @@ import SlotExample from "./SlotExample.vue";
 import Php from "./Php.vue";
 import LaravelView from "./Laravel.vue";
 import VueJs from "./VueJs.vue";
-import Footer from "./Footer.vue";
-import { watch } from "vue";
 
 export default {
     name: "HomeView",
@@ -212,8 +208,6 @@ export default {
     Php,
     LaravelView,
     VueJs,
-    Footer,
-    watch
 },
     computed: {
         applyStyle() {
