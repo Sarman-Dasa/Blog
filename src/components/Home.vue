@@ -1,5 +1,5 @@
 <template>
-    <div id="left">
+    <div class="left">
         <h1 v-on:mousemove="getConsole()">Home component</h1>
         <p>Employee FirstName : {{ firstName }}</p>
         <p>Employee LastName : {{ lastName }}</p>
@@ -16,7 +16,7 @@
         <button v-on:dblclick="getMobilenumber()">Double Click</button>
     </div>
 
-    <div id="right">
+    <div class="right">
         <h2>Second Div</h2>
         <input type="number" v-model="count" />
         <input type="text" v-model="name" />
@@ -24,9 +24,9 @@
         <UserForm />
     </div>
 
-    <div id="clearboth"></div>
+    <div class="clearboth"></div>
 
-    <div id="left">
+    <div class="left">
         <ListData />
         <!-- set data and get into child component -->
         <!-- Access parent component data into child component like:property , object ,function -->
@@ -34,7 +34,8 @@
         <h3>User Name Is : {{ userName }}</h3>
     </div>
 
-    <div id="right">
+    <!-- component reuse example -->
+    <div class="right">
         <button v-on:click="tableDesign = !tableDesign">change table Style</button>
         <table :class="applyStyle">
             <tr>
@@ -55,13 +56,37 @@
             </tr>
         </table>
     </div>
-    
-    <div id="right">
+
+    <!-- User form with validation -->
+    <div class="right">
         <UserData />
     </div>
-    <div id="clearboth"></div>
-    <div id="left">
+
+    <div class="clearboth"></div>
+
+    <!-- Watcher Example -->
+    <div class="left">
         <Watcher />
+    </div>
+
+    <!-- Slot Example -->
+    <div class="right">
+        <SlotExample>
+            <h1>Hello from slot</h1>
+        </SlotExample>
+
+        <SlotExample>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur,
+                porro!
+            </p>
+        </SlotExample>
+
+        <SlotExample>
+            <a href="#">Click</a>
+        </SlotExample>
+
+        <SlotExample></SlotExample>
     </div>
 </template>
 
@@ -72,6 +97,7 @@ import Child from "./Child.vue";
 import UserList from "./UserList.vue";
 import UserData from "./UserData.vue";
 import Watcher from "./Watcher.vue";
+import SlotExample from "./SlotExample.vue";
 
 export default {
     name: "HomeView",
@@ -133,24 +159,25 @@ export default {
         // call this function from userlist component and alert a user id
         getUserId(id) {
             alert(id);
-        }
+        },
     },
     components: {
-    UserForm,
-    ListData,
-    Child,
-    UserList,
-    UserData,
-    Watcher
-},
+        UserForm,
+        ListData,
+        Child,
+        UserList,
+        UserData,
+        Watcher,
+        SlotExample,
+    },
     computed: {
         applyStyle() {
             return {
                 tabledesign: this.tableDesign,
-                error: true
-            }
-        }
-    }
+                error: true,
+            };
+        },
+    },
 };
 </script>
 
@@ -164,7 +191,7 @@ p {
     font-weight: bold;
 }
 
-#left {
+.left {
     float: left;
     width: 45%;
     background-color: antiquewhite;
@@ -172,7 +199,7 @@ p {
     margin-bottom: 10px;
 }
 
-#right {
+.right {
     float: right;
     width: 50%;
     text-align: left;
@@ -185,7 +212,7 @@ h2 {
     color: #000;
 }
 
-#clearboth {
+.clearboth {
     clear: both;
 }
 
@@ -200,7 +227,7 @@ h2 {
 .tabledesign th {
     background-color: black;
     color: #fff;
-    padding: 10px
+    padding: 10px;
 }
 
 .error {
