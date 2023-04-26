@@ -5,6 +5,7 @@ import Php from "./components/Php.vue"
 import VueJs from "./components/VueJs.vue"
 import UserData from "./components/UserData.vue";
 import Watcher from "./components/Watcher.vue";
+import Profile from "./components/Profile.vue";
 
 const routes = [
     {
@@ -41,6 +42,11 @@ const routes = [
         name: "Watcher",
         path: "/watcher",
         component: Watcher
+    },
+    {
+        name: "Profile",
+        path: "/profile/:id",
+        component: Profile
     }
 
     
