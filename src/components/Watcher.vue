@@ -1,6 +1,6 @@
 <template>
     <h1>Volume Tracker (0-20)</h1>
-    <h2>Current Volume :{{ volume }}</h2>
+    <h2 ref="volume">Current Volume :{{ volume }}</h2>
     <input type="range" v-model="volume" min="0" max="20">
 </template>
 
@@ -19,6 +19,13 @@
                     alert("Volume is high to damage your ears!!!");
                 }
             }
+        },
+        // life cycle method
+        beforeUpdate() {
+            console.log("before update volume :",this.$refs['volume'].textContent);
+        },
+        updated() {
+            console.log("after update volume :",this.$refs['volume'].textContent);
         }
     }
 </script>
