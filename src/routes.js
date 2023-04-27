@@ -8,6 +8,7 @@ import Watcher from "./components/Watcher.vue";
 import Profile from "./components/Profile.vue";
 import PageNotFound from "./components/PageNotFound.vue";
 import GetApi from "./components/GetApi.vue";
+import Adduser from "./components/AddUser.vue";
 
 const routes = [
     {
@@ -59,6 +60,11 @@ const routes = [
         name: "GetApi",
         path: "/get-api",
         component: GetApi
+    },
+    {
+        name: "AddUser",
+        path: '/add-user',
+        component: Adduser
     }
 
     
