@@ -7,6 +7,7 @@ import UserData from "./components/UserData.vue";
 import Watcher from "./components/Watcher.vue";
 import Profile from "./components/Profile.vue";
 import PageNotFound from "./components/PageNotFound.vue";
+import GetApi from "./components/GetApi.vue";
 
 const routes = [
     {
@@ -53,6 +54,11 @@ const routes = [
         name: "NotFound",
         path: "/:pathMatch(.*)*",
         component: PageNotFound
+    },
+    {
+        name: "GetApi",
+        path: "/get-api",
+        component: GetApi
     }
 
     
