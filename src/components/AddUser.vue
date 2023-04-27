@@ -77,6 +77,9 @@ export default {
                     avatar: this.form.avatar
                 });
 
+                if(result.status == 201) {
+                    this.$router.push({name:"GetApi"});
+                }
             console.log("Result :",result);
             }
         }
