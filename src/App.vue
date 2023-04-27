@@ -1,6 +1,6 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <!-- <img alt="Vue logo" src="./assets/logo.png">
+  <HelloWorld msg="Welcome to Your Vue.js App" /> -->
 
   <div class="link">
     <router-link to="/">Home</router-link>
@@ -13,6 +13,7 @@
     <router-link to="/profile/2">Hitesh' Profile</router-link>
     <router-link to="/xyz/abc">xyz</router-link>
     <router-link to="/get-api">Get Api </router-link>
+    <router-link to="/add-user"> Add New User </router-link>
   </div>
 
   <div class="main">
@@ -25,13 +26,13 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 import Footer from "./components/Footer.vue";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    // HelloWorld,
     Footer,
   }
 }
@@ -64,8 +65,8 @@ export default {
   background-color: azure;
   padding: 20px;
   position: relative;
-  width: 50%;
-  margin: 2% 15%;
+  width: 80%;
+  margin: 2% 5%;
   border: #000 5px solid;
 }
 </style>
