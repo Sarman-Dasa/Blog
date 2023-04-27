@@ -1,7 +1,7 @@
 <template>
-   <table align="center">
+    <table align="center">
         <tr>
-            <th class="heading" colspan="5">Get Api Call</th>
+            <th class="heading" colspan="6">Get Api Call</th>
         </tr>
         <tr>
             <th>Id</th>
@@ -9,6 +9,7 @@
             <th>Last Name</th>
             <th>Email</th>
             <th>Image</th>
+            <th>Action</th>
         </tr>
         <tr v-for="item in list" :key="item">
             <td> {{ item.id }} </td>
@@ -16,8 +17,9 @@
             <td>{{ item.last_name }}</td>
             <td>{{ item.email }}</td>
             <td><img :src="item.avatar" alt=""></td>
+            <td><button v-on:click="deleteUser(item.id)">Delete</button></td>
         </tr>
-   </table>
+    </table>
 </template>
 
 <script>
@@ -29,10 +31,21 @@ export default {
             list: [],
         }
     },
-    async mounted() {
-        let result = await axios.get("https://reqres.in/api/users?page=1");
-        console.log(result.data.data);
-        this.list = result.data.data;
+    methods: {
+        async loadData() {
+            //get a api uri to list a data
+            let result = await axios.get("http://localhost:3000/users");
+            this.list = result.data;
+        },
+        async deleteUser(id) {
+            let result = await axios.delete("http://localhost:3000/users/" + id);
+            if (result.status == 200) {
+                this.loadData();
+            }
+        }
+    },
+    mounted() {
+        this.loadData();
     }
 
 }
@@ -45,6 +58,7 @@ table {
     width: 100%;
     text-align: justify;
 }
+
 .heading {
     text-align: center;
     background-color: aqua;
