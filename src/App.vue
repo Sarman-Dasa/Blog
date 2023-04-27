@@ -10,7 +10,6 @@
     <router-link to="/user-data">user-data</router-link>
     <router-link to="/watcher">Volume</router-link>
     <router-link to="/profile/1">Dharmik' Profile</router-link>
-    <router-link to="/profile/2">Hitesh' Profile</router-link>
     <router-link to="/xyz/abc">xyz</router-link>
     <router-link to="/get-api">Get Api </router-link>
     <router-link to="/add-user"> Add New User </router-link>
