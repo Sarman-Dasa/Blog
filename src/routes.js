@@ -9,6 +9,7 @@ import Profile from "./components/Profile.vue";
 import PageNotFound from "./components/PageNotFound.vue";
 import GetApi from "./components/GetApi.vue";
 import Adduser from "./components/AddUser.vue";
+import UpdateUser from "./components/UpdateUser.vue";
 
 const routes = [
     {
@@ -63,8 +64,13 @@ const routes = [
     },
     {
         name: "AddUser",
-        path: '/add-user',
+        path: "/add-user",
         component: Adduser
+    },
+    {
+        name: "UpdateUser",
+        path: "/update-user/:id",
+        component: UpdateUser
     }
 
     
