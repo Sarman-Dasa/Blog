@@ -1,7 +1,7 @@
 <template>
     <table align="center">
         <tr>
-            <th class="heading" colspan="6">Get Api Call</th>
+            <th class="heading" colspan="7">Get Api Call</th>
         </tr>
         <tr>
             <th>Id</th>
@@ -9,7 +9,7 @@
             <th>Last Name</th>
             <th>Email</th>
             <th>Image</th>
-            <th>Action</th>
+            <th colspan="2" align="center">Action</th>
         </tr>
         <tr v-for="item in list" :key="item">
             <td> {{ item.id }} </td>
@@ -18,6 +18,7 @@
             <td>{{ item.email }}</td>
             <td><img :src="item.avatar" alt=""></td>
             <td><button v-on:click="deleteUser(item.id)">Delete</button></td>
+            <td><router-link :to="'/update-user/'+item.id">Edit</router-link></td>
         </tr>
     </table>
 </template>
