@@ -10,6 +10,8 @@ import PageNotFound from "./components/PageNotFound.vue";
 import GetApi from "./components/GetApi.vue";
 import Adduser from "./components/AddUser.vue";
 import UpdateUser from "./components/UpdateUser.vue";
+import Jobs from "./components/Jobs.vue";
+import JobDetails from "./components/JobDetails.vue"
 
 const routes = [
     {
@@ -71,7 +73,18 @@ const routes = [
         name: "UpdateUser",
         path: "/update-user/:id",
         component: UpdateUser
+    },
+    {
+        name: "Jobs",
+        path: "/jobs",
+        component: Jobs
+    },
+    {
+        name: "JobDetails",
+        path: "/job-JobDetails/:id",
+        component: JobDetails
     }
+
 
     
 ];
