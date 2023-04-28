@@ -32,3 +32,8 @@ npm i axios
 npm install -g json-server
 <!-- created a file if not they -->
 json-server --watch db.json
+
+
+## install bootstrap
+npm install bootstrap
+npm install popper.js --save
