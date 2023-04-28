@@ -13,6 +13,7 @@
     <router-link to="/xyz/abc">xyz</router-link>
     <router-link to="/get-api">Get Api </router-link>
     <router-link to="/add-user"> Add New User </router-link>
+    <router-link :to="{name:'Jobs'}">Jobs</router-link>
   </div>
 
   <div class="main">
