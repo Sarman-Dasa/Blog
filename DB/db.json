@@ -1,0 +1,54 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "users": [
+    {
+      "first_name": "sarman m",
+      "last_name": "dasa",
+      "email": "sarmand@gmail.com",
+      "avatar": "https://reqres.in/img/faces/5-image.jpg",
+      "id": 1
+    },
+    {
+      "first_name": "dharmik d",
+      "last_name": "dodiya",
+      "email": "dharmikd@gmail.com",
+      "avatar": "https://reqres.in/img/faces/6-image.jpg",
+      "id": 2
+    },
+    {
+      "first_name": "test",
+      "last_name": "test1",
+      "email": "test@gmail.com",
+      "avatar": "https://reqres.in/img/faces/8-image.jpg",
+      "id": 4
+    }
+  ],
+  "jobs": [
+    {
+      "name": "Laravel Developer",
+      "member": 40,
+      "id":1
+    },
+    {
+      "name": "Php Developer",
+      "member": 30,
+      "id":2
+    },
+    {
+      "name": "Vue js Developer",
+      "member": 10,
+      "id":3
+    },
+    {
+      "name": "React js Developer",
+      "member": 10,
+      "id":4
+    }
+  ]
+}
